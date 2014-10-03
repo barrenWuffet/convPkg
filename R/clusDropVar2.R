@@ -5,13 +5,14 @@
 #' @param y A numeric vector of cluster numbers to try.
 #' @param threshold A number for 0 - 1 for silhouette width to excede.
 #' @param vte A character vector containing column names to exclude from consideration.
+#' @param xLoopsBeforePrint A number for how many loops to skip before printing information to console. Higher number means less output.
 
 #' @keywords names class
 #' @export
 #' @examples
 #' clusDropVar(iris, 3:5, threshold = .6, vte = 'Species')
 
-clusDropVar <- function(x, y, threshold = .5, vte = c() ){
+clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10){
 	require(cluster)
 	require(ade4)
 #x <- iris
@@ -39,7 +40,7 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() ){
 			sil1 <- pam1$silinfo$avg.width
 			scores1[[i]] <- data.frame(varName = as.character(vtu1[i]), score = sil1)
 
-			#if(i %% 10 == 0){
+			#if(i %% xLoopsBeforePrint == 0){
 
 			print(paste('i: ', i, ' | k: ',j,' | sil: ',sil1, ' | var: ',vtu1[i], sep = ''));flush.console()
 			#}
@@ -53,7 +54,7 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() ){
 	gc()
 
 	varToDrop <- scores1Df[which(scores1Df$score == max(scores1Df$score)),'varName']
-	print(paste('Dropping var: ', varToDrop, ' | Best Score : ', max(scores1Df$score) , sep = ''));flush.console()
+	print(paste('Dropping var: ', varToDrop, ' | Best Score : ', max(scores1Df$score), ' | vtu1 length: ',length(vtu1) , sep = ''));flush.console()
 	varsToExclude <- c(varsToExclude, varToDrop)
 		if(max(scores1Df$score) >= threshold){
 			vtu1 <- varsToUse[!(varsToUse %in% varsToExclude)]
