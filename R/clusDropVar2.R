@@ -16,9 +16,9 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() ){
 	require(ade4)
 #x <- iris
 	varsToUse <- names(x)
-	if(is.null(vte)){
-			vte <- c()
-	}
+	#if(is.null(vte)){
+	#		vte <- c()
+	#}
 	varsToExclude <- c(vte)
 	scoresFull <- list()
 	minNumOfVars <- 2
