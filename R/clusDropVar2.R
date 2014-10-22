@@ -33,24 +33,26 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 	for(i in 1:length(vtu1)){  # i =1
 		ddm1 <- dudi.mix(x[,vtu1[-i]], add.square = FALSE, scannf = F, nf = 20)
 
+		subList <- list()
+		# Different #s of clusters
 		for(j in y){ # j = 2
 
 			set.seed(456)
 			pam1 <- clara(ddm1$li[,1:min(5,ncol(ddm1$li))], k = j, samples = 50)
 			sil1 <- pam1$silinfo$avg.width
-			scores1[[i]] <- data.frame(varName = as.character(vtu1[i]), score = sil1)
+			subList[[j]] <- data.frame(varName = as.character(vtu1[i]), k = j, score = sil1)
 
 			if(i %% xLoopsBeforePrint == 0){
-
-			print(paste('i: ', i, ' | k: ',j,' | sil: ',sil1, ' | var: ',vtu1[i], sep = ''));flush.console()
+				print(paste('i: ', i, ' | k: ',j,' | sil: ',sil1, ' | var: ',vtu1[i], sep = ''));flush.console()
 			}
-		}  		
+		}  
+		scores1[[i]] <- do.call(rbind.data.frame, subList)
 
 	}
 
 	scores1Df <- do.call(rbind.data.frame, scores1)
 	scores1Df$varName <- as.character(scores1Df$varName)
-	
+	print(scores1Df);flush.console()
 	gc()
 
 	varToDrop <- scores1Df[which(scores1Df$score == max(scores1Df$score)),'varName']
