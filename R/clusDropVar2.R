@@ -52,8 +52,8 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 
 	scores1Df <- do.call(rbind.data.frame, scores1)
 	scores1Df$varName <- as.character(scores1Df$varName)
-	print(scores1Df);flush.console()
-	gc()
+	#print(scores1Df);flush.console()
+	#gc()
 
 	varToDrop <- scores1Df[which(scores1Df$score == max(scores1Df$score)),'varName']
 	print(paste('Dropping var: ', varToDrop, ' | Best Score : ', max(scores1Df$score), ' | vtu1 length: ',length(vtu1) , sep = ''));flush.console()
