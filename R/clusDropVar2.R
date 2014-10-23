@@ -44,6 +44,7 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 
 			if(i %% xLoopsBeforePrint == 0){
 				print(paste('i: ', i, ' | k: ',j,' | sil: ',sil1, ' | var: ',vtu1[i], sep = ''));flush.console()
+				gc()	
 			}
 		}  
 		scores1[[i]] <- do.call(rbind.data.frame, subList)
