@@ -3,4 +3,6 @@
 export(clusDropVar)
 export(cnn)
 export(lsos)
+export(meanImp)
+export(naHandler)
 export(rankTab)
