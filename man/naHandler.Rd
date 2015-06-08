@@ -16,7 +16,8 @@ converted to a separate factor level.  If column is numeric, the mean is imputed
 }
 \examples{
 data(iris)
-iris[,c('Petal.Length','Petal.Width','Species')] <- lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
+lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
+as.list(iris[,c('Petal.Length','Petal.Width','Species')])
 }
 \keyword{NA}
 \keyword{impute}

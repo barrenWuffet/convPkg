@@ -7,7 +7,8 @@
 #' @export
 #' @examples
 #' data(iris)
-#' iris[,c('Petal.Length','Petal.Width','Species')] <- lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
+#' lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
+#' as.list(iris[,c('Petal.Length','Petal.Width','Species')])
 
 naHandler <- function(x){
   if(sum(is.na(x)) > 0){
