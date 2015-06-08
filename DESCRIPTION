@@ -1,10 +1,13 @@
 Package: convPkg5
-Title: What the package does (one line)
+Title: Cluster helpers
 Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (one paragraph)
-Depends: 
+Authors@R: "Sam Argow <sargow@yahoo.com> [aut, cre]"
+Description: Convenience functions for variable selection in clustering
+URL: https://github.com/barrenWuffet/convPkg
+BugReports: https://github.com/barrenWuffet/convPkg/issues
+Depends:
     R (>= 3.1.1)
-License: What license is it under?
+License: MIT + file LICENSE
+VignetteBuilder: knitr
 LazyData: true
 Suggests: testthat
