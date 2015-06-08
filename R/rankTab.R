@@ -5,8 +5,8 @@
 #' @keywords table
 #' @export
 #' @examples
+#' data(iris)
 #' rankTab(iris$Species)
-
 
 rankTab <- function(x){
 tab1 <- data.frame(table(x))

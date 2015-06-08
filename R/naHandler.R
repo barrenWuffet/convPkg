@@ -6,6 +6,7 @@
 #' @keywords impute mean NA
 #' @export
 #' @examples
+#' data(iris)
 #' iris[,c('Petal.Length','Petal.Width','Species')] <- lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
 
 naHandler <- function(x){

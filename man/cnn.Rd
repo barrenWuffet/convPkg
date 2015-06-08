@@ -13,6 +13,7 @@ cnn(dataset)
 This function prints the column number, name, and variable type for each column in a data.frame.
 }
 \examples{
+data(iris)
 cnn(iris)
 }
 \keyword{class}

@@ -15,6 +15,7 @@ A Function to handle NA values.  If column is a factor variable, the NA's are
 converted to a separate factor level.  If column is numeric, the mean is imputed.
 }
 \examples{
+data(iris)
 iris[,c('Petal.Length','Petal.Width','Species')] <- lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
 }
 \keyword{NA}

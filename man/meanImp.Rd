@@ -13,6 +13,7 @@ meanImp(x)
 A Function to impute means from all other non-NA cells in a column.
 }
 \examples{
+data(iris)
 meanImp(iris$Petal.Length)
 }
 \keyword{impute}

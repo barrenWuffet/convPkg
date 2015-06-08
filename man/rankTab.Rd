@@ -13,6 +13,7 @@ rankTab(x)
 A Function to rank a table() output from most frequently occuring to least.
 }
 \examples{
+data(iris)
 rankTab(iris$Species)
 }
 \keyword{table}

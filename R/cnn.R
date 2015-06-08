@@ -5,8 +5,8 @@
 #' @keywords names class
 #' @export
 #' @examples
+#' data(iris)
 #' cnn(iris)
-
 
 cnn  <- function(dataset){
 	for(i in 1:length(dataset)){
