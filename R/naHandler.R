@@ -24,4 +24,3 @@ naHandler <- function(x){
     return(x)
   }
 }
-

@@ -72,8 +72,4 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 		}
 	}
 }
-
-
-
 }
-
