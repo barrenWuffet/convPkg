@@ -75,8 +75,6 @@ clusDropVar <- function(
         outPutList[["bestScore"]] <- max(scores1Df$score)
 
         return(outPutList)
-        stop()
-
       }
     }
   }
