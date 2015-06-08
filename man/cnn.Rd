@@ -7,7 +7,7 @@
 cnn(dataset)
 }
 \arguments{
-\item{x}{A data.frame object}
+\item{dataset}{A data.frame object}
 }
 \description{
 This function prints the column number, name, and variable type for each column in a data.frame.

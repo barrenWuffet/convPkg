@@ -8,12 +8,18 @@ http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory
 \usage{
 lsos(..., n = 10)
 }
+\arguments{
+\item{...}{Passed to .ls.objects}
+
+\item{n}{Number of objects to show}
+}
 \description{
 A Memory Object Browser Function
 Shamelessly Copied from this stackoverflow.com post
 http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session
 }
 \examples{
+data(iris)
 lsos()
 }
 \keyword{memory}
