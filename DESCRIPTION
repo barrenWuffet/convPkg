@@ -19,6 +19,6 @@ Depends:
 License: MIT + file LICENSE
 VignetteBuilder: knitr
 LazyData: true
-Suggests: testthat, knitr
+Suggests: testthat, lintr, knitr
 Imports: cluster,
     ade4

@@ -21,7 +21,7 @@ clusDropVar(x, y, threshold = 0.5, vte = c(), xLoopsBeforePrint = 10)
 A Function to loop thru and drop variables from a data.frame for clustering uses.
 }
 \examples{
-clusDropVar(iris, 3:5, threshold = .6, vte = 'Species')
+clusDropVar(iris, 3:5, threshold = .6, vte = "Species")
 }
 \keyword{class}
 \keyword{names}

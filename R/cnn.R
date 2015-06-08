@@ -9,7 +9,7 @@
 #' cnn(iris)
 
 cnn  <- function(dataset){
-	for(i in 1:length(dataset)){
-	print(paste(i,": ", colnames(dataset)[i], " | ", class(dataset[,i]), sep=""))
-	}
+  for(i in 1:length(dataset)){
+    print(paste(i,": ", colnames(dataset)[i], " | ", class(dataset[,i]), sep=""))
+  }
 }

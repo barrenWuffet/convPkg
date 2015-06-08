@@ -1,3 +1,3 @@
-test_that('Minimal Test', {
+test_that("Minimal Test", {
   expect_true(TRUE)
 })
