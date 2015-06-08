@@ -5,6 +5,6 @@ context("naHandler")
 
 test_that("naHandler works", {
   data(iris)
-  nas <- lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
-  expect_equal(nas, as.list(iris[,c('Petal.Length','Petal.Width','Species')]))
+  nas <- lapply(iris, function(x) naHandler(x))
+  expect_equal(nas, as.list(iris))
 })
