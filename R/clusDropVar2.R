@@ -8,13 +8,13 @@
 #' @param xLoopsBeforePrint A number for how many loops to skip before printing information to console. Higher number means less output.
 
 #' @keywords names class
+#' @importFrom cluster clara
+#' @importFrom ade4 dudi.mix
 #' @export
 #' @examples
 #' clusDropVar(iris, 3:5, threshold = .6, vte = 'Species')
 
 clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10){
-	require(cluster)
-	require(ade4)
 #x <- iris
 	varsToUse <- names(x)
 	#if(is.null(vte)){
@@ -25,7 +25,7 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 	minNumOfVars <- 2
 
 	for(q in 1:length(varsToUse)){ # q = 1
-	
+
 	scores1 <- list()
 	vtu1 <- varsToUse[!(varsToUse %in% varsToExclude)]
 	if(length(vtu1) > 2){
@@ -44,9 +44,9 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 
 			if(i %% xLoopsBeforePrint == 0){
 				print(paste('i: ', i, ' | k: ',j,' | sil: ',sil1, ' | var: ',vtu1[i], sep = ''));flush.console()
-				gc()	
+				gc()
 			}
-		}  
+		}
 		scores1[[i]] <- do.call(rbind.data.frame, subList)
 
 	}
@@ -62,7 +62,7 @@ clusDropVar <- function(x, y, threshold = .5, vte = c() , xLoopsBeforePrint = 10
 		if(max(scores1Df$score) >= threshold){
 			vtu1 <- varsToUse[!(varsToUse %in% varsToExclude)]
 			outPutList <- list()
-			outPutList[['varsToUse']] <- vtu1 
+			outPutList[['varsToUse']] <- vtu1
 			outPutList[['varsToExclude']] <- varsToExclude
 			outPutList[['bestScore']] <- max(scores1Df$score)
 
