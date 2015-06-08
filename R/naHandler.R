@@ -13,7 +13,7 @@
 naHandler <- function(x){
   if(sum(is.na(x)) > 0){
     if(is.factor(x) == TRUE){
-      x <- addNA(x)
+      x <- addNA(x, ifany = TRUE)
       return(x)
     }
     if(is.numeric(x) == TRUE){
