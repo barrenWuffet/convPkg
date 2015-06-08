@@ -1,7 +1,16 @@
 Package: convPkg5
 Title: Cluster helpers
 Version: 0.1
-Authors@R: "Sam Argow <sargow@yahoo.com> [aut, cre]"
+Authors@R: c(
+  person(
+    "Sam", "Argow",
+    role = c("aut", "cre"),
+    email = "sargow@yahoo.com"),
+  person(
+    "Zachary",
+    "Deane-Mayer",
+    role=c("aut"),
+    email="zach.mayer@gmail.com"))
 Description: Convenience functions for variable selection in clustering.
 URL: https://github.com/barrenWuffet/convPkg
 BugReports: https://github.com/barrenWuffet/convPkg/issues
