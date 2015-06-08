@@ -1,0 +1,23 @@
+# Sample .travis.yml for R projects
+
+language: r
+warnings_are_errors: true
+sudo: required
+
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
+   - R_BUILD_ARGS="--no-manual --no-build-vignettes"
+   - R_CHECK_ARGS="--no-manual --no-build-vignettes --as-cran"
+   - BOOTSTRAP_LATEX=""
+
+r_github_packages:
+  - jimhester/covr
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+after_success:
+  - Rscript -e 'library(covr);coveralls()'

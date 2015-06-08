@@ -3,6 +3,7 @@
 #' @keywords impute mean
 #' @export
 #' @examples
+#' data(iris)
 #' meanImp(iris$Petal.Length)
 
 meanImp <- function(x){

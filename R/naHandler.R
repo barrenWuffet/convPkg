@@ -6,12 +6,14 @@
 #' @keywords impute mean NA
 #' @export
 #' @examples
-#' iris[,c('Petal.Length','Petal.Width','Species')] <- lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
+#' data(iris)
+#' lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
+#' as.list(iris[,c('Petal.Length','Petal.Width','Species')])
 
 naHandler <- function(x){
   if(sum(is.na(x)) > 0){
     if(is.factor(x) == TRUE){
-      x <- addNA(x)
+      x <- addNA(x, ifany = TRUE)
       return(x)
     }
     if(is.numeric(x) == TRUE){
@@ -22,4 +24,3 @@ naHandler <- function(x){
     return(x)
   }
 }
-
