@@ -38,7 +38,8 @@ clusDropVar <- function(
 
       for(i in 1:length(vtu1)){
         # i =1
-        ddm1 <- dudi.mix(x[,vtu1[-i]], add.square = FALSE, scannf = F, nf = 20)
+        ddm1 <- dudi.mix(x[,vtu1[-i]], add.square = FALSE, scannf = F, full = T)
+        # ddm1 <- dudi.mix(x[,vtu1[-i]], add.square = FALSE, scannf = F, nf = 20)
 
         subList <- list()
         # Different #s of clusters
