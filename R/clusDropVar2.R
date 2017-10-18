@@ -46,7 +46,9 @@ clusDropVar <- function(
           # j = 2
 
           set.seed(456)
-          pam1 <- clara(ddm1$li[,1:min(5,ncol(ddm1$li))], k = j, samples = 50)
+
+          pam1 <- clara(ddm1$li[,1:length(ddm1$eig[ddm1$eig > 1])], k = j, samples = 50)
+          # pam1 <- clara(ddm1$li[,1:min(5,ncol(ddm1$li))], k = j, samples = 50)
           sil1 <- pam1$silinfo$avg.width
           subList[[j]] <- data.frame(varName = as.character(vtu1[i]), k = j, score = sil1)
 
