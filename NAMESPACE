@@ -2,6 +2,7 @@
 
 export(clusDropVar)
 export(cnn)
+export(hiFreqFact)
 export(lsos)
 export(meanImp)
 export(naHandler)
