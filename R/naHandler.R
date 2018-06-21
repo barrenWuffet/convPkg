@@ -10,17 +10,22 @@
 #' lapply(iris[,c('Petal.Length','Petal.Width','Species')], function(x) naHandler(x))
 #' as.list(iris[,c('Petal.Length','Petal.Width','Species')])
 
-naHandler <- function(x){
-  if(sum(is.na(x)) > 0){
-    if(is.factor(x) == TRUE){
+naHandler <- function (x)
+{
+  if (sum(is.na(x)) > 0) {
+    if (is.factor(x) == TRUE) {
       x <- addNA(x, ifany = TRUE)
       return(x)
     }
-    if(is.numeric(x) == TRUE){
+    if (is.numeric(x) == TRUE) {
       x <- meanImp(x)
     }
+    else {
+      return(x)
+    }
   }
-  else{
+  else {
     return(x)
   }
 }
+
