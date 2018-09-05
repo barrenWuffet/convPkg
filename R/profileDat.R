@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-prof_dat <- function(x){
+profileDat <- function(x){
   pro_df <- data.frame(row_num = 1:ncol(x), col_name = names(x))
   pro_df$row_cnt <- nrow(x)
   # Find unique counts
