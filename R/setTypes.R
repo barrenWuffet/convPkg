@@ -16,7 +16,7 @@ setTypes <- function(x){ # x = dat1
     print(i);flush.console()
     print(as.character(x[1:5,i]));flush.console()
     # t1 <-
-    df1[1,'type'] <- readline(' Type - f / n / c ?')
+    df1[1,'type'] <- readline(' Type - f / n / c ?   ')
     l1[[i]] <- df1
   }
 
