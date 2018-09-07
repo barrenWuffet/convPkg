@@ -2,6 +2,7 @@
 
 export(clusDropVar)
 export(cnn)
+export(exportGBMtoPDF)
 export(hiFreqFact)
 export(lsos)
 export(meanImp)

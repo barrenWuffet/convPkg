@@ -2,8 +2,5 @@
 
 
 cat_names <- function(x){
-  cat(paste(",'",names(x), "'",'\n', sep = ''))
+  cat(paste(",'", names(x), "'", "\n", sep = ""))
 }
-
-
-
