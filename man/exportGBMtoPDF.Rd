@@ -24,3 +24,7 @@ exportGBMtoPDF(gbm1, '/data/output/', 'output.pdf')
 
 
 }
+\author{
+Arshan Tarapore
+\email{aktarapore@gmail.com}
+}

@@ -6,7 +6,8 @@
 #'
 #' @return NA - writes to file.
 #' @export
-#' @author Arshan Tarapore \email{aktarapore@gmail.com}
+#' @author Arshan Tarapore
+#' \email{aktarapore@@gmail.com}
 #'
 #' @examples
 #' exportGBMtoPDF(gbm1, '/data/output/', 'output.pdf')
