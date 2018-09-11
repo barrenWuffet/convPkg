@@ -20,7 +20,7 @@ NA - writes to file.
 Function to write the variable importance plots of a gbm object to a pdf.
 }
 \examples{
-exportGBMtoPDF(gbm1, '/data/output/', 'output.pdf')
+
 
 
 }

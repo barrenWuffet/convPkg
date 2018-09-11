@@ -10,7 +10,7 @@
 #' \email{aktarapore@@gmail.com}
 #'
 #' @examples
-#' exportGBMtoPDF(gbm1, '/data/output/', 'output.pdf')
+#'
 #'
 #'
 exportGBMtoPDF <- function(gbm_object,file_path,file_name){

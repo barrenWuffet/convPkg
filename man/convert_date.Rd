@@ -16,8 +16,9 @@ data.frame with any columns of class POSIXct or POSIXt converted to Dates
 Converts all columns of class POSIXct or POSIXt in a data.frame to Date class.
 }
 \examples{
+z <- seq(1472562988, 1472563988, 100)
+df1 <- data.frame(col1 = as.POSIXct(z, origin = "1960-01-01"))
 df2 <- convert_date(df1)
-
 
 }
 \author{
