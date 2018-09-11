@@ -6,6 +6,13 @@
 \usage{
 cat_names(x)
 }
+\arguments{
+\item{x}{a data.frame}
+}
 \description{
 A function to print variable names for easy pasting to a new character vector.
+}
+\examples{
+cat_names(iris)
+
 }
