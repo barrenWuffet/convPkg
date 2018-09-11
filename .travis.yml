@@ -15,7 +15,7 @@ env:
   #- jimhester/covr
 r_packages:
   - covr
-  
+
 notifications:
   email:
     on_success: change
@@ -23,5 +23,5 @@ notifications:
 
 after_success:
   #- Rscript -e 'library(covr);coveralls()'
-    - Rscript -e 'covr::codecov()'
+    - Rscript -e 'library(covr);covr::codecov()'
 
