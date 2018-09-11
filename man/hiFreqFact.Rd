@@ -11,6 +11,16 @@ hiFreqFact(x, y = 1000)
 
 \item{y}{- minimum number of occurrences to keep}
 }
+\value{
+a factor vector with all levels occurring less than the minimum # of times converted to 'other'
+}
 \description{
 Reduce Cardinality of Factor Variables to only keep Hi Frequency Levels
+}
+\examples{
+v1 <- c(rep('a',25), rep('b',50), rep('c',3))
+df1 <- data.frame(col1 = v1)
+df1$col2 <- hiFreqFact(df1$col1, y = 10)
+summary(df1)
+
 }
