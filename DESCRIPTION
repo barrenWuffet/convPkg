@@ -10,7 +10,38 @@ Authors@R: c(
     "Zachary",
     "Deane-Mayer",
     role=c("aut"),
-    email="zach.mayer@gmail.com"))
+    email="zach.mayer@gmail.com"),
+  person(
+    "Andrei", 
+    "Rukavina",
+    role=c("ctb"),
+    email="https://github.com/arukavina"),
+  person(
+    "Arshan", 
+    "Tarapore",
+    role=c("ctb"),
+    email="aktarapore@gmail.com"),
+  person(
+    "Thijn", 
+    "van der Heijden",
+    role=c("ctb"),
+    email="avanderheijden@alixpartners.com"),
+  person(
+    "Zach", 
+    "Armentrout",
+    role=c("ctb"),
+    email="zarmentrout@alixpartners.com"),
+  person(
+    "Qianbo", 
+    "Wang",
+    role=c("ctb"),
+    email="qwang@alixpartners.com"),   
+  person(
+    "James", 
+    "Wang",
+    role=c("ctb"),
+    email="swang@alixpartners.com")
+    )
 Description: Convenience functions for variable selection in clustering.
 URL: https://github.com/barrenWuffet/convPkg
 BugReports: https://github.com/barrenWuffet/convPkg/issues
@@ -19,7 +50,7 @@ Depends:
 License: MIT + file LICENSE
 VignetteBuilder: knitr
 LazyData: true
-Suggests: testthat, lintr, knitr
+Suggests: testthat, lintr, knitr, gbm
 Imports: cluster,
     ade4
 RoxygenNote: 6.0.1
