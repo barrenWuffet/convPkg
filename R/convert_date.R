@@ -11,9 +11,9 @@
 #' @author \itemize{
 #'    \item Andrei Rukavina - \url{https://github.com/arukavina}
 #'    \item Thijn van der Heijden - \email{avanderheijden@@alixpartners.com}
-#'    \item Zach Armentrout - \email{zarmentrout@alixpartners.com}
-#'    \item Qianbo Wang - \email{qwang@alixpartners.com}
-#'    \item James Wang - \email{swang@alixpartners.com}
+#'    \item Zach Armentrout - \email{zarmentrout@@alixpartners.com}
+#'    \item Qianbo Wang - \email{qwang@@alixpartners.com}
+#'    \item James Wang - \email{swang@@alixpartners.com}
 #' }
 #'
 #'
