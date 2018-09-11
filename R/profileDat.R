@@ -1,12 +1,14 @@
 
 #' Standard method of profiling a data frame
 #'
-#' @param x
+#' @param x a data.frame
 #'
-#' @return
+#' @return data.frame with profiling data from input data.frame
 #' @export
 #'
 #' @examples
+#' prof_dat(iris)
+#'
 prof_dat <- function(x){
   pro_df <- data.frame(row_num = 1:ncol(x), col_name = names(x))
   pro_df$row_cnt <- nrow(x)

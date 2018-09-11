@@ -1,13 +1,14 @@
 
 #' Set the variable types for a data.frame
 #'
-#' @param x
+#' @param x a data.frame
 #'
-#' @return
+#' @return a data.frame
 #' @export
 #'
 #' @examples
 #' setTypes(iris)
+#'
 setTypes <- function(x){ # x = dat1
   v1 <- names(x)
   l1 <- list()

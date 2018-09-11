@@ -2,6 +2,7 @@
 
 export(clusDropVar)
 export(cnn)
+export(convert_date)
 export(exportGBMtoPDF)
 export(hiFreqFact)
 export(lsos)

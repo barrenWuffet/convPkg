@@ -7,8 +7,15 @@
 prof_dat(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{a data.frame}
+}
+\value{
+data.frame with profiling data from input data.frame
 }
 \description{
 Standard method of profiling a data frame
+}
+\examples{
+prof_dat(iris)
+
 }

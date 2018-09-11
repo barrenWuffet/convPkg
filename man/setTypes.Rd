@@ -7,11 +7,15 @@
 setTypes(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{a data.frame}
+}
+\value{
+a data.frame
 }
 \description{
 Set the variable types for a data.frame
 }
 \examples{
 setTypes(iris)
+
 }
