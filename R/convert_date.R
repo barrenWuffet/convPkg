@@ -9,6 +9,8 @@
 #' z <- seq(1472562988, 1472563988, 100)
 #' df1 <- data.frame(col1 = as.POSIXct(z, origin = "1960-01-01"))
 #' df2 <- convert_date(df1)
+#' cnn(df1)
+#' cnn(df2)
 #'
 #' @author \itemize{
 #'    \item Andrei Rukavina - \url{https://github.com/arukavina}
