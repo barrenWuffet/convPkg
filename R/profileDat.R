@@ -24,6 +24,7 @@ prof_dat <- function(x){
   pro_df$blank_pct <- round(pro_df$blank_cnt / pro_df$row_cnt, 4)
   # pro_df$top_5_val_pct <- round(sapply(x, function(x) sum(!(is.na( rankTab(x)[1:max(5,nrow(x)), "Freq"]))) / nrow(x)), 4)
   pro_df$top_5_val_pct <- round(sapply(x, function(x) sum(sum(rankTab(x)[1:5, "Freq"], na.rm = TRUE)) / length(x)), 4)
+  pro_df$top_1_val_pct <- round(sapply(x, function(x) sum(sum(rankTab(x)[1, "Freq"], na.rm = TRUE)) / length(x)), 4)
 
   # sum(!(is.na( rankTab(x)[1:max(5,nrow(x)), "Freq"])))
   return(pro_df)
