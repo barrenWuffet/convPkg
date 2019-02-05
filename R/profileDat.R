@@ -10,7 +10,7 @@
 #' prof_dat(iris)
 #'
 prof_dat <- function(x){
-  pro_df <- data.frame(row_num = 1:ncol(x), col_name = names(x))
+  pro_df <- data.frame(row_num = 1:ncol(x), col_name = names(x), stringsAsFactors = F)
   pro_df$row_cnt <- nrow(x)
   # Find unique counts
   pro_df$uniq_val <- sapply(x, function(x) length(unique(x)))
@@ -18,7 +18,7 @@ prof_dat <- function(x){
   pro_df$na_cnt <- sapply(x, function(x) sum(is.na(x)))
   # Find blanks
   pro_df$blank_cnt <- sapply(x, function(x) length(x[!is.na(x) & as.character(x) == '']))
-  pro_df$top_val <- sapply(x, function(x) {if (!all(is.na(x))) return(rankTab(x)[1, "x"]) else return(NA)})
+  pro_df$top_val <- unlist(lapply(x, function(x) {if (!all(is.na(x))) return(as.character(rankTab(x)[1, 'x'])) else return(NA)}))
   
   pro_df$na_pct <- round(pro_df$na_cnt / pro_df$row_cnt, 4)
   pro_df$blank_pct <- round(pro_df$blank_cnt / pro_df$row_cnt, 4)
