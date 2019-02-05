@@ -2,6 +2,7 @@
 #'
 #' @param x - vector of factor values
 #' @param y - minimum number of occurrences to keep
+#' @param na.handle - how to treat NA values, "NA", "Other" or FALSE. If FALSE, leave NA as is, if "Other", then convert NA to other as well. If "NA", convert NA to "NA".
 #'
 #' @return a factor vector with all levels occurring less than the minimum # of times converted to 'other'
 #' @export
@@ -12,11 +13,21 @@
 #' df1$col2 <- hiFreqFact(df1$col1, y = 10)
 #' summary(df1)
 #'
-hiFreqFact <- function(x, y = 1000){
+hiFreqFact <- function(x, y = 1000, na.handle = 'Other'){
   x <- as.character(x)
   rt1 <- rankTab(x)
   rt1 <- rt1[rt1$Freq > y,]
-  x <- ifelse(x %in% rt1$x, x, 'other')
+  x <- {
+    if (na.handle != FALSE){
+      if (na.handle == 'NA'){
+        ifelse(is.na(x), 'NA', ifelse(x %in% rt1$x, x, 'other'))
+      } else{
+        ifelse(x %in% rt1$x, x, 'other')
+      }
+    } else {
+      ifelse(x %in% rt1$x | is.na(x), x, 'other')
+    }
+  }
   x <- as.factor(x)
   return(x)
 }
