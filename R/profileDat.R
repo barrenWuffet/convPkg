@@ -10,7 +10,7 @@
 #' prof_dat(iris)
 #'
 prof_dat <- function(x){
-  pro_df <- data.frame(row_num = 1:ncol(x), col_name = names(x))
+  pro_df <- data.frame(row_num = 1:ncol(x), col_name = names(x), stringsAsFactors = F)
   pro_df$row_cnt <- nrow(x)
   # Find unique counts
   pro_df$uniq_val <- sapply(x, function(x) length(unique(x)))
