@@ -13,7 +13,7 @@
 #'
 #'
 #'
-exportGBMtoPDF <- function(gbm_object,file_path,file_name){
+exportGBMtoPDF1 <- function(gbm_object,file_path = '.',file_name='var_imp.pdf'){
   if(class(gbm_object) != "gbm")
     stop("gbm_object parameter is not of class'gbm'")
   if(class(file_path) != "character")
@@ -21,23 +21,23 @@ exportGBMtoPDF <- function(gbm_object,file_path,file_name){
   if(class(file_name) != "character")
     stop("file_name parameter is not of class 'character'")
   sgbm1 <-summary(gbm_object)
-  if(substr(file_name,nchar(file_name)-4+1,nchar(file_name)) == ".pdf") {
-    pdf(paste(file_path,file_name,sep = "\\"),height = 11, width = 10)
-    grid.table(sgbm1)
+  if(tools::file_ext(file_name)== "pdf") {
+    vtu2 <- as.character(summary(gbm_object, plotit = F)$var)
+    pdf(paste(file_path,file_name,sep = "/"),height = 11, width = 10)
     summary(gbm_object,main = "Variable Importance Plot")
-    for (i in as.character(summary(gbm_object,plotit = F)$var)) {
-      plot(gbm_object,i,type = 'response')
+    for (i in vtu2) {
+      plot(gbm_object,i)
       title(main = paste("Partial Dependence Plot of",toString(i),sep=" "))
     }
     dev.off()
   }
   else {
     warning("file_name parameter coerced to .pdf type")
-    pdf(paste(file_path,"\\",file_name,".pdf",sep =""),height = 11, width = 10)
-    grid.table(sgbm1)
+    vtu2 <- as.character(summary(gbm_object, plotit = F)$var)
+    pdf(paste(file_path,file_name,sep = "/"),height = 11, width = 10)
     summary(gbm_object,main = "Variable Importance Plot")
-    for (i in as.character(summary(gbm_object,plotit = F)$var)) {
-      plot(gbm_object,i,type = 'response')
+    for (i in vtu2) {
+      plot(gbm_object,i)
       title(main = paste("Partial Dependence Plot of",toString(i),sep=" "))
     }
     dev.off()
